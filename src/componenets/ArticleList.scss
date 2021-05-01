@@ -1,0 +1,62 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; 
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; 
+}
+
+body {
+  color: #333;
+  font-weight: 300;
+  line-height: 1.6; 
+}
+
+.article-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 1rem;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+}
+
+.card {
+    margin: 20px;
+}
+.container {
+    width: 60%;
+}
+
+.lightbox {
+    z-index: 1;
+    position: fixed;
+    color: aliceblue;
+    font-size: 80px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*optional bg color*/
+    background-color: rgba(24, 23, 26, 0.863);
+    /*the following isn't necessary but will help center everything once we add buttons*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+.lightbox-img {
+    width: 500px;
+    height: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
