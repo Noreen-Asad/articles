@@ -18,11 +18,109 @@ body {
 }
 
 .article-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 10px;
+  row-gap: 1em;
+  ul {
+    list-style: none;
+  }
 }
 
+@media(min-width: 768px) {
+  .card:nth-child(1){
+    grid-column-start: 1;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  } 
+  .card:nth-child(2){
+    grid-column-start: 9;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  } 
+
+  .card:nth-child(3){
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 6;
+  }
+
+  .card:nth-child(4){
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 3;
+    grid-row-end: 6;
+  }
+  .card:nth-child(5){
+    grid-column-start: 9;
+    grid-column-end: 13;
+    grid-row-start: 3;
+    grid-row-end: 6;
+  }
+  .card:nth-child(6){
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 6;
+    grid-row-end: 9;
+  }
+  .card:nth-child(7){
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-start: 6;
+    grid-row-end: 9;
+  }
+  .card:nth-child(8){
+    grid-column-start: 7;
+    grid-column-end: 10;
+    grid-row-start: 6;
+    grid-row-end: 9;
+  }
+  .card:nth-child(9){
+    grid-column-start: 10;
+    grid-column-end: 13;
+    grid-row-start: 6;
+    grid-row-end: 9;
+  }
+  .card:nth-child(10){
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 9;
+    grid-row-end: 12;
+  }
+  .card:nth-child(11){
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 9;
+    grid-row-end: 12;
+  }
+  .card:nth-child(12){
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-start: 9;
+    grid-row-end: 12;
+  }
+  .card:nth-child(13){
+    grid-column-start: 7;
+    grid-column-end: 9;
+    grid-row-start: 9;
+    grid-row-end: 12;
+  }
+  .card:nth-child(14){
+    grid-column-start: 9;
+    grid-column-end: 11;
+    grid-row-start: 9;
+    grid-row-end: 12;
+  }
+  .card:nth-child(15){
+    grid-column-start: 11;
+    grid-column-end: 13;
+    grid-row-start: 9;
+    grid-row-end: 12;
+  }
+}
 img{
     height: 100%;
     width: 100%;

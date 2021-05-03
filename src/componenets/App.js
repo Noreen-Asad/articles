@@ -9,7 +9,7 @@ class App extends React.Component {
 
   async componentDidMount() {
     const response = await unsplash.get("photos", {
-      params: { per_page: "20" },
+      params: { per_page: "15" },
     });
     console.log(response);
     this.setState({ articles: response.data });
