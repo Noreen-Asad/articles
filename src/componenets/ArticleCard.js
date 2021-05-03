@@ -15,6 +15,13 @@ class ArticleCard extends React.Component {
   };
   render() {
     const { description, urls, alt_description } = this.props.article;
+    let overview;
+    if (alt_description) {
+     overview = <p>{alt_description}</p>
+    }
+    else{
+      overview = <p>no description available</p>
+    }
     return (
       <div className="card">
         <div
@@ -29,12 +36,7 @@ class ArticleCard extends React.Component {
         <div>{alt_description}</div>
         {this.state.lightboxDisplay ? (
           <div className="lightbox" onClick={this.hideLightBox}>
-            {/* <img
-              className="lightbox-img"
-              alt=""
-              src={this.state.imageURL}
-            ></img> */}
-            <p>{description}</p>
+            {overview}
           </div>
         ) : (
           ""
