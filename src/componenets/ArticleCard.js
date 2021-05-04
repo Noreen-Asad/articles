@@ -1,20 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ArticleList.scss";
 
-class ArticleCard extends React.Component {
-  state = {
-    lightboxDisplay: false,
-    imageURL: "",
-    description: ''
+const ArticleCard = ({urls, description, alt_description}) => {
+  console.log(description)
+  const [details, setDescription] = useState(description);
+  const [lightboxDisplay, setLightboxDisplay] = useState(false);
+  const showLightBox = () => {
+    setLightboxDisplay(true);
+    setDescription(alt_description);
   };
-  showLightBox = (url, description) => {
-    this.setState({ lightboxDisplay: true, imageURL: url, details: description });
+  const hideLightBox = () => {
+    setLightboxDisplay(false);
   };
-  hideLightBox = (url) => {
-    this.setState({ lightboxDisplay: false, imageURL: "" });
-  };
-  render() {
-    const { description, urls, alt_description } = this.props.article;
     let overview;
     if (alt_description) {
      overview = <p>{alt_description}</p>
@@ -25,17 +22,15 @@ class ArticleCard extends React.Component {
     return (
       <div className="card">
         <div
-          onClick={() => {
-            this.showLightBox(urls.regular, description);
-          }}
+          onClick={() => {showLightBox(urls['regular'], details)}}
           className="article-img"
         >
           <img alt={description} src={urls['regular']} />
         </div>
         <div>{description}</div>
         <div>{alt_description}</div>
-        {this.state.lightboxDisplay ? (
-          <div className="lightbox" onClick={this.hideLightBox}>
+        {lightboxDisplay ? (
+          <div className="lightbox" onClick={hideLightBox}>
             {overview}
           </div>
         ) : (
@@ -43,7 +38,6 @@ class ArticleCard extends React.Component {
         )}
       </div>
     );
-  }
 }
 
 export default ArticleCard;
