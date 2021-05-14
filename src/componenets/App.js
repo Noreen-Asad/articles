@@ -10,7 +10,7 @@ function App() {
     unsplash.get("photos", {
       params: { per_page: "15" },
     }).then(data => setArticles(data.data)).catch(err => alert(err))
-  }, [setArticles, articles]);
+  }, []);
 
   if (articles) {
     return (
